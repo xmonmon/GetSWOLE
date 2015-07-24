@@ -51,7 +51,6 @@ app.use('/', function (req, res, next) {
 
 
 app.get('/', function (req, res) {
-  var index = __dirname + "/index.html";
 
   res.sendFile(__dirname + '/public/views/index.html');
 });
