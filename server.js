@@ -51,7 +51,8 @@ app.use('/', function (req, res, next) {
 
 
 app.get('/', function (req, res) {
-  var index = _dirname + "/index.html";
+  var index = __dirname + "/index.html";
+
   res.sendFile(__dirname + '/public/views/index.html');
 });
 
@@ -76,7 +77,8 @@ app.post('/users', function (req, res) {
   var password = req.body.user.password;
   console.log(email , password);
   User.createSecure(email, password, function (err, user) {
-    res.redirect('/');
+  req.login(user);    
+  res.redirect('/profile');
   });
 });
 
@@ -96,6 +98,7 @@ app.post('/login', function(req, res){
   var email = req.body.user.email;
   var password = req.body.user.password;
   User.authenticate(email, password, function (err, user) {
+    req.login(user);
     res.redirect('/profile');
   });
 });

@@ -14,14 +14,14 @@
         <form method="post" action="/login">
           <div class="modal-body">
             <div class="form-group">
-              <input type="email" name="user[email]" class="form-control" placeholder="Email">
+              <input type="email" name="user[email]" class="form-control" placeholder="Email" required>
             </div>
             <div class="form-group">
-              <input type="password" name="user[password]" class="form-control" placeholder="Password">
+              <input type="password" name="user[password]" class="form-control" placeholder="Password" required>
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Leave this page</button>
+            <a href="/" class="btn btn-default" data-dismiss="modal">Leave this page</a>
             <input type="submit" value="Log In" class="btn btn-primary">
           </div>
         </form>

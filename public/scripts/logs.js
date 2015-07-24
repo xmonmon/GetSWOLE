@@ -65,7 +65,7 @@ $(function() {
         console.log($supplementHtml);
 
 
-        $('#supplement-list').append($supplementHtml);
+        $('#allSupplements').append($supplementHtml);
       });
     },
 
@@ -77,9 +77,12 @@ $(function() {
         event.preventDefault();
         
 
-        var supplementTitle = $('#Title').val();
-        var supplementDosage = $('#Dosage').val();
-        var supplementReason = $('#Reason').val();
+        var supplementTitle = $('#title').val();
+        console.log(supplementTitle);
+        var supplementDosage = $('#dosage').val();
+        console.log(supplementDosage);
+        var supplementReason = $('#reason').val();
+        console.log(supplementReason);
 
         supplementController.create(supplementTitle, supplementDosage, supplementReason);
 
