@@ -1,15 +1,11 @@
-head {
-  background-color: 2F4F4F;
+body {
+  font-family: 'Poiret One', cursive;
+  background-color: #2F4F4F;
 }
-
-body {  
-     background-color: #696969;
-     font-family: 'Poiret One', cursive;
-     
- }
 
 .modal {
   text-align: center;
+  font-size: 36px;
 }
 @media screen and (min-device-width: 768px) {
   .modal:before {
@@ -25,3 +21,4 @@ body {
   text-align: left;
   vertical-align: middle;
 }
+

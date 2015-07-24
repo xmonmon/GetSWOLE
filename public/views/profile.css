@@ -1,12 +1,13 @@
 head {
-  background-color: 2F4F4F;
+  font-family: 'Times';
+  font-size: 17px;
 }
 
-body {  
-     background-color: #696969;
-     font-family: 'Poiret One', cursive;
-     
- }
+body {
+  font-family: 'Poiret One', cursive;
+  font-size: 17px;
+  background-color: #2F4F4F;
+}
 
 .modal {
   text-align: center;
