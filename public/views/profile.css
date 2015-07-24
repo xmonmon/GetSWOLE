@@ -1,12 +1,14 @@
 head {
   font-family: 'Times';
   font-size: 17px;
+  text-align: center;
 }
 
 body {
   font-family: 'Poiret One', cursive;
   font-size: 17px;
   background-color: #2F4F4F;
+  text-align: center;
 }
 
 .modal {
@@ -23,6 +25,17 @@ body {
 
 .modal-dialog {
   display: inline-block;
-  text-align: left;
+  text-align: center;
   vertical-align: middle;
+}
+
+.jumbotron {
+  background-color: rgba(42, 30, 20, 0.4);;
+  color: #F2F2F2;
+  text-align: center;
+  padding: 0.5em 0.6em;
+}
+
+.jumbotron p {
+  font-size: 2em;
 }
