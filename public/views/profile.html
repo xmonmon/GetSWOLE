@@ -9,8 +9,6 @@
   <!-- custom styles -->
   <link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
   <link type="text/css" rel="stylesheet" href="/views/profile.css">
-
-  <title>Get SWOLE!</title>
 </head>
 <div class="jumbotron">
     <h1>Get SWOLE!</h1>
@@ -26,7 +24,9 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="/">Get SWOLE!</a>
+        <a class="navbar-brand" href="/">home</a>
+        <a class="navbar-brand" href="/login">login</a>
+        <a class="navbar-brand" href="/signup">signup</a>
       </div>
 
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -39,6 +39,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-3 col-sm-4">
+        <div class="form-group">
         <div class="well">
           <p>What are you taking?</p>
           <!-- form to create new workout log -->
@@ -51,11 +52,13 @@
                 <option>Overall Health</option>
               </select>
             </div>
+          </div>
        </div>
       </div>
     </div>
   </div>
             <div class="container">
+              <div class="row">
               <div class="col-md-3 col-sm-4">
             <div class="form-group">
               <input type="text" class="form-control" placeholder="Supplement Name" id="title">
