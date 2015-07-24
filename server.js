@@ -7,13 +7,9 @@ var mongoose = require('mongoose'),
 	User = require('./public/models/user.js'),
   Supplement = require('./public/models/log.js'); 
 	
-// connect to mongodb
-mongoose.connect(
-  process.env.MONGOLAB_URI ||
-  process.env.MONGOHQ_URL ||
-  'mongodb://localhost/getswole'
-);
 
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(express.static(__dirname + '/public'));
 
 app.use(session({
   saveUninitialized: true,
@@ -22,15 +18,18 @@ app.use(session({
   cookie: { maxAge: 60000 }
 }));
 
-
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(express.static(__dirname + '/public'));
+// connect to mongodb
+mongoose.connect(
+  process.env.MONGOLAB_URI ||
+  process.env.MONGOHQ_URL ||
+  'mongodb://localhost/getswole'
+);
 
 // this is the middleware used to manage the sessions
 app.use('/', function (req, res, next) {
   // this is saving the user's id for that session
   req.login = function (user) {
-    req.session.userId = user.id;
+    req.session.userId = user._id;
   };
 
   // this is going to find the current user dependning on the session
@@ -52,11 +51,12 @@ app.use('/', function (req, res, next) {
 
 
 app.get('/', function (req, res) {
+  var index = _dirname + "/index.html";
   res.sendFile(__dirname + '/public/views/index.html');
 });
 
 //this is my static route
-app.get('/signup',function(req,res){
+app.get('/signup', function(req,res){
   req.currentUser(function(err,user){
     if (user){
       res.redirect('/profile')
@@ -137,7 +137,7 @@ app.post('/api/supplements', function (req, res) {
     dosage: req.body.dosage,
     reason: req.body.reason
   });
-
+  console.log(newSupplement)
   newSupplement.save(function (err, savedSupplement) {
     res.json(savedSupplement);
   });
@@ -189,3 +189,8 @@ app.delete('/api/supplements/:id', function (req, res) {
 app.listen(process.env.PORT || 3000, function() {
  console.log('server started on locahost:3000');
 });
+
+
+
+
+

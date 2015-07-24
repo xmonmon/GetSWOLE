@@ -4,8 +4,8 @@ $(function() {
   var usersController = {
 
     // produce the underscore templates
-    template: _.template($('#user-template').html()),
-    supplementTemplate: _.template($('#user-template').html()),
+    template: _.template($('#supplements-template').html()),
+    supplementTemplate: _.template($('#supplements-template').html()),
 
     // now this is going to get the current user that is logged in
     show: function() {
@@ -15,7 +15,7 @@ $(function() {
         $userHtml = $(users.template({currentUser: user}));
 
 // APPEND TO THE USER'S HTML PAGE
-        $('#show-user').append($userHtml);
+        $('#new-log').append($userHtml);
 
 // THIS IS GOING THROUGH THE USER'S LOG
         _.each(user.supplement, function(supplement, index) {
@@ -25,7 +25,7 @@ $(function() {
           $supplementHtml = $(userController.supplementTemplate(supplement);
 
 // APPEND TO THE LOG TO THE PAGE
-          $('#supplement_list').append($supplementHtml);
+          $('#allSupplements').append($supplementHtml);
         });
       });
     },

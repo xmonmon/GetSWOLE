@@ -39,7 +39,7 @@ $(function() {
         //changes the allSupplements to supplement_list just to see if it works
 
         _.each(supplements, function(supplement, index) {
-          console.log(supplements);
+          
 
           var $supplementHtml = $(supplementController.template(supplement));
           
@@ -50,9 +50,12 @@ $(function() {
     },
 
     create: function(titleData, dosageData, reasonData) {
-
       var supplementData = {title: titleData, dosage: dosageData, reason: reasonData};
-      console.log(supplmentData);
+        var dosage = $('#dosage').val();
+        var title = $('#title').val();
+        var reason = $('#reason').val();
+        console.log(dosage, title, reason);
+      console.log(supplementData);
       // AJAX call to server to POST /api/logs
       $.post('/api/supplements', supplementData, function(newSupplement) {
         console.log(newSupplement);
