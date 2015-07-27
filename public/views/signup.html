@@ -1,3 +1,4 @@
+ 
  <!-- signup modal -->
  <!--  // this is going to link it to the styles.css page -->
    <link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
@@ -9,13 +10,13 @@
         <div class="modal-header">
           <h4 class="modal-title" id="myModalLabel">Sign Up</h4>
         </div>
-        <form method="post" action="/users">
+        <form method="post" id="signUpForm" action="/users">
           <div class="modal-body">
             <div class="form-group">
-              <input type="email" name="user[email]" class="form-control" placeholder="Email">
+              <input type="email" name="user[email]" class="form-control" placeholder="Email" required>
             </div>
             <div class="form-group">
-              <input type="password" name="user[password]" class="form-control" placeholder="Password">
+              <input type="password" name="user[password]" class="form-control" placeholder="Password" required>
             </div>
           </div>
           <div class="modal-footer">
@@ -26,3 +27,11 @@
       </div>
     </div>
   </div>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <!-- jQuery Validate -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.validation/1.14.0/jquery.validate.js"></script>
+    <!-- custom js -->
+    <script type="text/javascript" src="../scripts/profile.js"></script>
+</body>
+</html>

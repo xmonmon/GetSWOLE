@@ -1,11 +1,18 @@
 // Client Side JS
 $(function() {
+
+  // jQuery Validate 
+    $('#signUpForm').validate({
+         errorClass: "my-error-class",
+         validClass: "my-valid-class"
+       });
+
 //this is holding the functionality
   var usersController = {
 
     // produce the underscore templates
-    template: _.template($('#supplements-template').html()),
-    supplementTemplate: _.template($('#supplements-template').html()),
+    // template: _.template($('#supplements-template').html()),
+    // supplementTemplate: _.template($('#supplements-template').html()),
 
     // now this is going to get the current user that is logged in
     show: function() {
@@ -22,11 +29,12 @@ $(function() {
           console.log(supplement);
 
          //GO THORUGH THE TEMPLATE
-          $supplementHtml = $(userController.supplementTemplate(supplement);
+          $supplementHtml = $(userController.supplementTemplate(supplement));
 
 // APPEND TO THE LOG TO THE PAGE
           $('#allSupplements').append($supplementHtml);
         });
+        usersController.addEventHandlers();
       });
     },
 
@@ -73,3 +81,6 @@ $(function() {
   usersController.setupView();
 
 });
+
+
+      
