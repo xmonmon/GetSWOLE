@@ -14,6 +14,13 @@ body {
   font-size: 1em;
 }
 
+.my-error-class {
+    color: #f10101;  
+}
+.my-valid-class {
+    color: #3093cf; 
+}
+
 .modal {
   text-align: center;
   font-size: 30px;
